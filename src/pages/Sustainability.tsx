@@ -1,4 +1,4 @@
-import HeroPage from "../../public/plants.png";
+import HeroPage from "../assets/sustainability-hero.png";
 import Chevron from "../assets/chevron.svg";
 
 function Sustainability() {
