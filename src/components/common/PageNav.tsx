@@ -30,7 +30,7 @@ const PageNav: React.FC = () => {
 
   return (
     <div
-      className={`page-nav fixed -bottom-[100px] right-0 transition-all duration-500 linear
+      className={`page-nav fixed -bottom-[100px] right-0 transition-all duration-500 linear z-10
   ${showNav ? " -translate-y-[100px]" : "translate-y-0"}`}
     >
       <button onClick={scrollToTop}>

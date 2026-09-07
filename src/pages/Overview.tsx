@@ -50,24 +50,24 @@ const Overview = () => {
           <img
             src={HeroImage}
             alt="SAIB building interior"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute -top-1 h-[calc(100%+4px)] w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent" />
+          <div className="absolute bg-gradient-to-r from-black/50 via-black/10 to-transparent" />
           <div
             className="relative h-full flex flex-col items-start justify-center gap-5 sm:gap-6
                       px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28"
           >
             <h1
               className="text-white font-bold leading-none tracking-wide
-                       text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-[120px]"
+                        text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-[120px]  z-1"
             >
               Overview
             </h1>
             <button
               type="button"
               className="bg-[var(--color-gray-800)] text-white font-bold rounded-2xl
-                     text-lg sm:text-xl md:text-2xl px-8 sm:px-10 py-2.5 sm:py-3
-                     transition-all duration-100 hover:-translate-y-0.5 hover:shadow-lg"
+                      text-lg sm:text-xl md:text-2xl px-8 sm:px-10 py-2.5 sm:py-3
+                      transition-all duration-100 hover:-translate-y-0.5 hover:shadow-lg z-1"
             >
               Download PDF
             </button>
@@ -132,29 +132,53 @@ const Overview = () => {
               </section>
               {/* ===================================== Awards Section =====================================  */}
 
-              <section className="-mx-4 bg-[#474b55] sm:-mx-6 lg:-mx-12 xl:-mx-20 2xl:-mx-28">
-                <div className="px-4 py-10 sm:px-6 sm:py-12 lg:px-12 lg:py-14 xl:px-20 2xl:px-28">
-                  <h2 className="text-3xl font-bold text-[#ffd400] sm:text-4xl lg:text-[40px]">
-                    Awards and Recognition
-                  </h2>
-                  <div className="mt-8 flex gap-6 overflow-x-auto py-5 [scrollbar-width:none] lg:mt-12 [&::-webkit-scrollbar]:hidden">
-                    {awardsArray.map((text, i) => (
-                      <article key={i} className="award info-card shrink-0">
-                        <img
-                          src={AwardIcon}
-                          alt=""
-                          aria-hidden
-                          className="h-16 w-auto shrink-0 lg:h-20"
-                        />
-                        <p className="text-sm md:text-md lg:text-lg font-thin leading-[1.2] text-white">
-                          {text}
-                        </p>
-                      </article>
-                    ))}
+              <div className="carousel-background h-76 sm:h-84 xl:h-88 relative">
+                <section
+                  className="absolute -left-4 sm:-left-6 lg:-left-12 xl:-left-28
+                          bg-[#474b55] py-10 sm:py-12 lg:py-14"
+                >
+                  <div className="">
+                    <h2
+                      className="text-2xl md:text-3xl font-bold text-[#ffd400] sm:text-4xl lg:text-[40px]
+                    px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28"
+                    >
+                      Awards and Recognition
+                    </h2>
+                    <div className="carousel-wrapper">
+                      <div className="carousel-track">
+                        {awardsArray.map((text, i) => (
+                          <article key={i} className="award info-card shrink-0">
+                            <img
+                              src={AwardIcon}
+                              alt=""
+                              aria-hidden
+                              className="h-16 w-auto shrink-0 lg:h-20"
+                            />
+                            <p className="text-sm md:text-md lg:text-lg font-thin leading-[1.2] text-white">
+                              {text}
+                            </p>
+                          </article>
+                        ))}
+                      </div>
+                      <div className="carousel-track">
+                        {awardsArray.map((text, i) => (
+                          <article key={i} className="award info-card shrink-0">
+                            <img
+                              src={AwardIcon}
+                              alt=""
+                              aria-hidden
+                              className="h-16 w-auto shrink-0 lg:h-20"
+                            />
+                            <p className="text-sm md:text-md lg:text-lg font-thin leading-[1.2] text-white">
+                              {text}
+                            </p>
+                          </article>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </section>
-
+                </section>
+              </div>
               {/* ===================================== Certifications Section =====================================  */}
 
               <section>
@@ -194,7 +218,7 @@ const Overview = () => {
                       <div
                         key={i}
                         className="md:border-l md:border-[#cbc2ba] md:pl-8
-                         md:[&:nth-child(3n+1)]:border-l-0 md:[&:nth-child(3n+1)]:pl-0"
+                          md:[&:nth-child(3n+1)]:border-l-0 md:[&:nth-child(3n+1)]:pl-0"
                       >
                         <h3 className="c pb-2 font-semibold text-[var(--text-primary)]">
                           {stat.label}
