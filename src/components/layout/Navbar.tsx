@@ -49,11 +49,7 @@ const Navbar = () => {
     { name: "Leadership", path: "/leadership", icon: "👥" },
     { name: "Strategic Review", path: "/strategic", icon: "📈" },
     { name: "Business Review", path: "/business", icon: "💼" },
-    {
-      name: "Sustainability Review",
-      path: "/sustainability",
-      icon: "🌱",
-    },
+    { name: "Sustainability Review", path: "/sustainability", icon: "🌱" },
     { name: "Financial Statements", path: "/financial", icon: "💰" },
   ];
 
