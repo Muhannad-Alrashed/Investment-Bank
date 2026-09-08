@@ -37,24 +37,12 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
-    { name: "Overview", path: "/Investment-Bank/overview", icon: "📊" },
-    { name: "Leadership", path: "/Investment-Bank/leadership", icon: "👥" },
-    {
-      name: "Strategic Review",
-      path: "/Investment-Bank/strategic",
-      icon: "📈",
-    },
-    { name: "Business Review", path: "/Investment-Bank/business", icon: "💼" },
-    {
-      name: "Sustainability Review",
-      path: "/Investment-Bank/sustainability",
-      icon: "🌱",
-    },
-    {
-      name: "Financial Statements",
-      path: "/Investment-Bank/financial",
-      icon: "💰",
-    },
+    { name: "Overview", path: "/overview", icon: "📊" },
+    { name: "Leadership", path: "/leadership", icon: "👥" },
+    { name: "Strategic Review", path: "/strategic", icon: "📈" },
+    { name: "Business Review", path: "/business", icon: "💼" },
+    { name: "Sustainability Review", path: "/sustainability", icon: "🌱" },
+    { name: "Financial Statements", path: "/financial", icon: "💰" },
   ];
 
   return (
@@ -123,7 +111,7 @@ const Navbar = () => {
           className={`menu ${isMenuOpen ? "menu-open" : "menu-close"} p-2 sm:p-4 md:p-10 lg:px-24`}
         >
           {menuItems.map((item) => (
-            <li key={item.path}>
+            <li key={item.path} onClick={closeMenu}>
               <Link
                 to={item.path}
                 className="menu-item w-55 md:w-70 lg:w-85 text-md md:text-lg lg:text-xl xl:text-2xl 
