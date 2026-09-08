@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Investment Bank</title>
+    <script>
+        const l = window.location;
+        const repo = "/Investment-Bank/";
+
+        const path = l.pathname.startsWith(repo)
+            ? l.pathname.slice(repo.length)
+            : l.pathname.replace(/^\/+/, "");
+
+        const query = l.search
+            ? "&" + l.search.slice(1).replace(/&/g, "~and~")
+            : "";
+
+        const hash = l.hash
+            ? "&" + l.hash.slice(1).replace(/&/g, "~and~")
+            : "";
+
+        l.replace(
+            l.protocol +
+            "//" +
+            l.host +
+            repo +
+            "?/" +
+            path.replace(/&/g, "~and~") +
+            query +
+            hash
+        );
+    </script>
+</head>
+
+<body></body>
+
+</html>
