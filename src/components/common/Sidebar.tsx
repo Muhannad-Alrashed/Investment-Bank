@@ -25,7 +25,7 @@ const SocialSidebar: React.FC = () => {
     const sidebar = document.getElementById("sidebarId");
     if (!sidebar) return;
 
-    if (location.pathname === "/") {
+    if (location.pathname === "/Investment-Bank") {
       if (!sidebar.classList.contains("animate"))
         sidebar.classList.add("animate");
     } else {

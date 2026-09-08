@@ -6,7 +6,7 @@ import path from 'path/win32'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/Investment-bank/',
+  base: '/Investment-Bank',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

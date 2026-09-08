@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Logo from "../ui/Logo";
 import { FiDownload, FiX, FiMenu } from "react-icons/fi";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Chevron from "../../assets/chevron.svg";
 import MenuIcon from "../../assets/icons/menu.svg";
 
@@ -10,7 +10,6 @@ const Navbar = () => {
   const [isMenuHovered, setIsMenuHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
 
   const openMenu = () => {
     setIsMenuOpen(true);
@@ -22,7 +21,7 @@ const Navbar = () => {
 
   const navigateToHome = () => {
     setIsMenuOpen(false);
-    navigate("/");
+    navigate("/Investment-Bank");
   };
 
   // Hide when scrolling
@@ -37,20 +36,25 @@ const Navbar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (location.pathname === "/") {
-      const navbar = document.getElementById("navbarId");
-      if (navbar) navbar.style.borderRadius = "0px";
-    }
-  }, [location.pathname]);
-
   const menuItems = [
-    { name: "Overview", path: "/overview", icon: "📊" },
-    { name: "Leadership", path: "/leadership", icon: "👥" },
-    { name: "Strategic Review", path: "/strategic", icon: "📈" },
-    { name: "Business Review", path: "/business", icon: "💼" },
-    { name: "Sustainability Review", path: "/sustainability", icon: "🌱" },
-    { name: "Financial Statements", path: "/financial", icon: "💰" },
+    { name: "Overview", path: "/Investment-Bank/overview", icon: "📊" },
+    { name: "Leadership", path: "/Investment-Bank/leadership", icon: "👥" },
+    {
+      name: "Strategic Review",
+      path: "/Investment-Bank/strategic",
+      icon: "📈",
+    },
+    { name: "Business Review", path: "/Investment-Bank/business", icon: "💼" },
+    {
+      name: "Sustainability Review",
+      path: "/Investment-Bank/sustainability",
+      icon: "🌱",
+    },
+    {
+      name: "Financial Statements",
+      path: "/Investment-Bank/financial",
+      icon: "💰",
+    },
   ];
 
   return (

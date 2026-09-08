@@ -8,7 +8,7 @@ const Landing = () => {
   const [showLainding, setShowLanding] = useState(false);
 
   useEffect(() => {
-    if (location.pathname !== "/") return;
+    if (location.pathname !== "/Investment-Bank") return;
 
     const timer1 = setTimeout(() => {
       setShowLanding(true);

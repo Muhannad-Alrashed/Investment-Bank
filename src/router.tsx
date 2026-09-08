@@ -8,7 +8,7 @@ import ErrorPage from "./pages/ErrorPage";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/Investment-Bank",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
