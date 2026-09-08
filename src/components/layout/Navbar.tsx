@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Logo from "../ui/Logo";
 import { FiDownload, FiX, FiMenu } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Chevron from "../../assets/chevron.svg";
 import MenuIcon from "../../assets/icons/menu.svg";
 
@@ -124,13 +124,13 @@ const Navbar = () => {
         >
           {menuItems.map((item) => (
             <li key={item.path}>
-              <a
-                href={item.path}
+              <Link
+                to={item.path}
                 className="menu-item w-55 md:w-70 lg:w-85 text-md md:text-lg lg:text-xl xl:text-2xl 
                                       p-1 md:p-2 lg:p-3 sm:m-2 md:m-3 lg:m-4"
               >
                 <span>{item.icon}</span> {item.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
