@@ -20,7 +20,7 @@ function NotFoundPage() {
           </p>
           <Link
             className="hover:text-white hover:bg-black outline rounded py-2 px-4"
-            to="/Investment-Bank"
+            to="/"
           >
             Back to homepage
           </Link>

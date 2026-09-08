@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const navigateToHome = () => {
     setIsMenuOpen(false);
-    navigate("/Investment-Bank");
+    navigate("/");
   };
 
   // Hide when scrolling

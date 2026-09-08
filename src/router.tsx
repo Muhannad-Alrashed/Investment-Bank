@@ -6,28 +6,33 @@ import Sustainability from "./pages/Sustainability";
 import NotFoundPage from "./pages/NotFoundPage";
 import ErrorPage from "./pages/ErrorPage";
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <RootLayout />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          index: true,
+          element: <HomePage />,
+        },
+        {
+          path: "overview",
+          element: <Overview />,
+        },
+        {
+          path: "sustainability",
+          element: <Sustainability />,
+        },
+      ],
+    },
+    {
+      path: "*",
+      element: <NotFoundPage />,
+    },
+  ],
   {
-    path: "/Investment-Bank",
-    element: <RootLayout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        element: <HomePage />,
-      },
-      {
-        path: "overview",
-        element: <Overview />,
-      },
-      {
-        path: "sustainability",
-        element: <Sustainability />,
-      },
-    ],
+    basename: "/Investment-Bank/",
   },
-  {
-    path: "*",
-    element: <NotFoundPage />,
-  },
-]);
+);
