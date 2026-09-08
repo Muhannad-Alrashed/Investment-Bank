@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Logo from "../ui/Logo";
 import { FiDownload, FiX, FiMenu } from "react-icons/fi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Chevron from "../../assets/chevron.svg";
 import MenuIcon from "../../assets/icons/menu.svg";
 
@@ -9,7 +9,9 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuHovered, setIsMenuHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+
   const navigate = useNavigate();
+  const location = useLocation();
 
   const openMenu = () => {
     setIsMenuOpen(true);
@@ -23,6 +25,14 @@ const Navbar = () => {
     setIsMenuOpen(false);
     navigate("/");
   };
+
+  useEffect(() => {
+    const navbar = document.getElementById("navbarId");
+    if (!navbar) return;
+
+    navbar.style.borderRadius =
+      location.pathname !== "/" ? " 0 0 6px 6px" : "0px";
+  }, [location.pathname]);
 
   // Hide when scrolling
   useEffect(() => {

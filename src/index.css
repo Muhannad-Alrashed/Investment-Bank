@@ -295,7 +295,6 @@ a {
   top: 0;
   background-color: var(--color-background-cold);
   z-index: 5;
-  border-radius: 0 0 6px 6px;
 }
 
 .close-icon-wrapper {
