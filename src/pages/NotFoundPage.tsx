@@ -8,12 +8,12 @@ function NotFoundPage() {
           className="flex max-w-md flex-col items-center text-center"
           aria-labelledby="not-found-title"
         >
+          <p> 404</p>
           <span className="text-4xl sm:text-6xl font-bold text-primary">
-            404
+            Investment Bank
           </span>
 
           <h3 className="text-lg sm:text-3xl font-bold">Page Not Found</h3>
-
           <p className="p-4 md:px-12 text-sm sm:text-lg ">
             Sorry, the page you are looking for does not exist or may have been
             moved.
